@@ -57,28 +57,44 @@
 								<fieldset>
 									<legend>Tùy chọn rà chuỗi và cược:</legend>
 									<div class="row">
-										<div class="large-6 small-6 columns">
+										<div class="large-4 small-4 columns">
 											<div class="group">
-												<label class="title">Chuỗi rà trước</label>
+												<label class="title">Chuỗi rà</label>
 												<select style="max-width: 50px; display: inline;" ng-options="type.value as type.value for type in betProbes" ng-model="betProbe"
 												 ng-disabled="onBetting" ng-change="updateBetList();"></select>
 											</div>
 										</div>
-										<div class="large-6 small-6 columns">
+										<div class="large-4 small-4 columns">
 											<div class="group">
-												<label class="title">Cược sau rà</label>
-												<select ng-options="type.value as type.value for type in btcPlusList" ng-model="btcPlus" ng-disabled="onBetting" ng-change="updateBetList(false)"></select>
+												<label class="title">Điểm cược</label>
+												<select style="max-width: 50px; display: inline;" ng-options="type.value as type.value for type in betPlacings" ng-model="betPlacing"
+												 ng-disabled="onBetting" ng-change="updateBetList();"></select>
 											</div>
 										</div>
-										<div class="large-6 small-6 columns">
+										<div class="large-4 small-4 columns">
 											<div class="group">
-												<label class="title">Tăng % lên</label>
+												<label class="title">Cược sau rà</label>
+												<select style="max-width: 97px; display: inline;" ng-options="type.value as type.value for type in btcPlusList" ng-model="btcPlus" ng-disabled="onBetting" ng-change="updateBetList(false)"></select>
+											</div>
+										</div>
+										<div class="large-3 small-3 columns">
+											<div class="group">
+												<label class="title">Tăng %</label>
 												<select style="max-width: 50px; display: inline;" ng-options="type.value as type.value for type in percentIncreases" ng-model="percentIncrease"
 												 ng-disabled="onBetting" ng-change="updateBetList(false)"></select>
 												<span>%</span>
 											</div>
 										</div>
-										<div class="large-6 small-6 columns">
+										<div class="large-4 small-4 columns">
+											<div class="group">
+												<label class="title">Tăng % khi</label>
+												<span>thua</span>
+												<select style="max-width: 40px; display: inline;" ng-options="type.value as type.value for type in increaseWhenLosts" ng-model="increaseWhenLost"
+													ng-disabled="onBetting" ng-change="updateBetList()"></select>
+												<span>lần</span>
+											</div>
+										</div>
+										<div class="large-5 small-5 columns">
 											<div class="group">
 												<label class="title">Cược lại sau khi</label>
 												<span>thua</span>
@@ -252,7 +268,7 @@
 			</ul>
 		</div>
 		<div class="balanceli">
-			<span id="balance" ng-value="balance">0.00306300</span> BTC</div>
+			<span id="balance" ng-value="balance">0.00549482</span> BTC</div>
 	</div>
 	<script src="js.js"></script>
 </body>
